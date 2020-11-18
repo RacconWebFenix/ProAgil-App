@@ -1,0 +1,17 @@
+ eventos: any = [
+    {
+      EventoId: 1,
+      Tema: 'Angular',
+      Local: 'Belo Horizonte'
+    },
+    {
+      EventoId: 2,
+      Tema: '.NET CORE',
+      Local: 'São Paulo'
+    },
+    {
+      EventoId: 3,
+      Tema: 'Angular e .NET CORE',
+      Local: 'Rio de Janeiro'
+    },
+  ];
