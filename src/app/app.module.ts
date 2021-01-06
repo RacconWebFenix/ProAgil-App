@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; // Fazer importação do ClientModule
@@ -9,12 +8,17 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'; // Importado para
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'; // Importado
 import { ModalModule } from 'ngx-bootstrap/modal'; // Importado
 import { TooltipModule } from 'ngx-bootstrap/tooltip'; // Importado
+import { ToastrModule } from 'ngx-toastr'; // Importado
 
 import { EventoService } from './_services/evento.service';
 
 import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component'; // Importado
 import { NavComponent } from './nav/nav.component'; // Importado
+import { EventosComponent } from './eventos/eventos.component'; // Importado
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PalestrantesComponent } from './palestrantes/palestrantes.component';
+import { ContatosComponent } from './contatos/contatos.component';
+import { TituloComponent } from './_shared/titulo/titulo.component'
 
 import { DateTimeFormatTypePipe } from './_helps/DateTimeFormatType.pipe'; // Importado
 
@@ -24,14 +28,23 @@ import { DateTimeFormatTypePipe } from './_helps/DateTimeFormatType.pipe'; // Im
 @NgModule({
   declarations: [
     AppComponent,
-    EventosComponent,
     NavComponent,
+    EventosComponent,
+    PalestrantesComponent,
+    DashboardComponent,
+    ContatosComponent,
+    TituloComponent,
     DateTimeFormatTypePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, // Importado
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }), // ToastrModule added
     BsDatepickerModule.forRoot(), // Importado
     BsDropdownModule.forRoot(), // Importado
     ModalModule.forRoot(), // Importado
